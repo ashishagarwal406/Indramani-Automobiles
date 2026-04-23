@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indramani Automobiles | Official Wholesale Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .brand-portal-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .brand-portal-card:hover { transform: translateY(-8px); border-color: #ef4444; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        .brand-img { filter: grayscale(1); transition: filter 0.3s ease; }
+        .brand-portal-card:hover .brand-img { filter: grayscale(0); }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900">
+
+    <nav class="glass-nav sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="brand-logo.jpg" alt="Indramani Logo" class="h-12 mr-3">
+                <div class="hidden sm:block">
+                    <h1 class="text-xl font-black tracking-tighter leading-none text-slate-900 uppercase">INDRAMANI</h1>
+                    <p class="text-[10px] font-bold tracking-[0.2em] text-red-600 uppercase">Automobiles</p>
+                </div>
+            </div>
+            <div class="flex space-x-6 md:space-x-10 text-[11px] font-extrabold uppercase tracking-widest text-slate-500">
+                <a href="#home" class="hover:text-red-600 transition">Home</a>
+                <a href="#catalogue" class="hover:text-red-600 transition">Brands</a>
+                <a href="#contact" class="hover:text-red-600 transition">Location</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="relative bg-slate-950 py-28 px-6 overflow-hidden text-center">
+        <div class="absolute inset-0 opacity-[0.05]" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+        <div class="container mx-auto relative z-10">
+            <div class="inline-block px-4 py-1 mb-6 text-[10px] font-black tracking-[0.3em] text-red-500 uppercase bg-red-500/10 border border-red-500/20 rounded-full">Authorized Distributor</div>
+            <h2 class="text-5xl md:text-8xl font-black mb-8 tracking-tighter text-white uppercase leading-tight">
+                <span class="italic text-red-600">2-Wheeler</span> SPARE PARTS
+            </h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#catalogue" class="bg-red-600 text-white px-10 py-4 rounded-sm font-black uppercase tracking-widest hover:bg-white hover:text-slate-950 transition duration-300 shadow-xl shadow-red-600/20">View Catalogues</a>
+                <a href="https://wa.me/918789055724" class="border border-slate-700 text-white px-10 py-4 rounded-sm font-black uppercase tracking-widest hover:bg-white hover:text-slate-950 transition duration-300">WhatsApp Enquiry</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="catalogue" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-red-600 font-black uppercase tracking-widest text-xs mb-4">Authorized Partners</h3>
+                <h4 class="text-4xl font-black text-slate-900 tracking-tight uppercase">Brands Available</h4>
+                <p class="text-slate-500 mt-4 font-light italic">Download official catalogues for wholesale orders.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <script>
+                    const brands = [
+                        { name: 'Diamond India', logo: 'diamond.png' }, { name: 'Swiss', logo: 'swiss.png' },
+                        { name: 'Phoenix', logo: 'phoenix.png' }, { name: 'King Quality', logo: 'king.png' },
+                        { name: 'Champion', logo: 'champion.png' }, { name: 'Yango Auto', logo: 'yango.png' },
+                        { name: 'Astral Adhesives', logo: 'astral.png' }, { name: 'CEAT', logo: 'ceat.png' },
+                        { name: 'ASK', logo: 'ask.png' }, { name: 'RMP Bearings', logo: 'rmp.png' },
+                        { name: 'Varroc', logo: 'varroc.png' }, { name: 'Suprajit', logo: 'suprajit.png' },
+                        { name: 'Usha Pistons', logo: 'usha.png' }, { name: 'Endurance', logo: 'endurance.png' }
+                    ];
+
+                    brands.forEach(brand => {
+                        const fileName = brand.name.replace(/\s+/g, '') + "-catalogue.pdf";
+                        document.write(`
+                            <div class="brand-portal-card bg-white rounded-xl p-6 border border-slate-100 shadow-sm text-center">
+                                <div class="h-16 flex items-center justify-center mb-4">
+                                    <img src="${brand.logo}" alt="${brand.name}" class="brand-img max-h-full max-w-[120px] object-contain" onerror="this.src='https://via.placeholder.com/120x60?text=${brand.name}'">
+                                </div>
+                                <h5 class="text-xs font-black uppercase tracking-widest mb-6">${brand.name}</h5>
+                                <div class="space-y-2">
+                                    <a href="${fileName}" target="_blank" class="block py-3 bg-slate-950 text-white text-[9px] font-bold uppercase tracking-widest rounded hover:bg-red-600 transition">
+                                        <i class="fas fa-file-pdf mr-2"></i> Download PDF
+                                    </a>
+                                    <a href="https://wa.me/918789055724?text=Requesting Price List for ${brand.name}" 
+                                       class="block py-3 border border-slate-200 text-slate-600 text-[9px] font-bold uppercase tracking-widest rounded hover:border-green-500 hover:text-green-600 transition">
+                                        <i class="fab fa-whatsapp mr-2"></i> Price List
+                                    </a>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-slate-950 text-white pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 mb-20 items-center">
+                <div class="space-y-6">
+                    <img src="brand-logo.jpg" alt="Indramani Logo" class="h-28 bg-white p-2 rounded shadow-2xl">
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-[0.3em] mb-2 text-red-600">Location</h4>
+                        <p class="text-slate-300 text-sm font-light italic">In front of R.K. Palace, Kal Para, Pakur, Jharkhand 816107</p>
+                    </div>
+                </div>
+                <div class="lg:text-right">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] mb-4 text-red-600">Timings</h4>
+                    <p class="text-4xl font-black">08:30 — 20:30</p>
+                    <p class="text-slate-500 text-[10px] font-bold tracking-widest uppercase mt-2">Mon — Sat | +91 87890 55724</p>
+                </div>
+            </div>
+            <div class="w-full h-80 rounded-2xl overflow-hidden shadow-2xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.321689622359!2d87.842749!3d24.683526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fa69c2c1459ddd%3A0xdaadd272c2ea2132!2sIndramani%20Automobiles!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
